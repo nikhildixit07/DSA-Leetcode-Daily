@@ -52,10 +52,11 @@ LeetCode Daily helps build:
 ## 📅 Daily Progress Table
 <!-- START_PROBLEM_TABLE -->
 
-|   Day | Problem                                                                                                          | Topic                         | Level     |
-| ----: | ----------------------------------------------------------------------------------------------------------------- | ----------------------------- | --------- |
-| Day 1 | [Maximum Running Time of N Computers (#2263)](https://leetcode.com/problems/maximum-running-time-of-n-computers/) | Binary Search • Greedy • Math | 🔥 Hard   |
-| Day 2 | [Count Number of Trapezoids I (#3886)](https://leetcode.com/problems/count-number-of-trapezoids-i/)               | Math • Geometry • Counting    | 🟡 Medium |
+| Day | Question | Topic(s) | Level |
+|---:|---|---|---|
+| Day 1 | [Maximum Running Time Of N Computers](https://leetcode.com/problems/maximum-running-time-of-n-computers/) | Array, Binary Search, Greedy, Sorting | Hard |
+| Day 2 | [Count Number Of Trapezoids I](https://leetcode.com/problems/count-number-of-trapezoids-i/) | Array, Hash Table, Math, Geometry | Medium |
+
 <!-- END_PROBLEM_TABLE -->
 *(This table will grow automatically as more Daily problems are added.)*
 
