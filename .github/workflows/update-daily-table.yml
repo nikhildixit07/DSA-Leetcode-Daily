@@ -5,19 +5,24 @@ on:
     branches: [ main ]
   workflow_dispatch: {}
   schedule:
-    - cron: '0 12 * * *' # daily at 12:00 UTC
+    - cron: '30 18 * * *'   # 00:00 IST
 
 permissions:
-  contents: write   # needed so the job can push changes
+  contents: write
 
 jobs:
   generate-and-commit:
     runs-on: ubuntu-latest
+
+    concurrency:
+      group: update-daily-table
+      cancel-in-progress: true
+
     steps:
       - name: Checkout repo
         uses: actions/checkout@v4
         with:
-          persist-credentials: true  # make GITHUB_TOKEN available for pushing
+          persist-credentials: true
 
       - name: Set up Python
         uses: actions/setup-python@v4
@@ -27,11 +32,11 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install requests beautifulsoup4
+          pip install requests
 
       - name: Run generate_daily_table.py (online if possible)
         run: |
-          python generate_daily_table.py || python generate_daily_table.py --offline
+          python generate_daily_table.py --insert README.md || python generate_daily_table.py --offline --insert README.md
 
       - name: Show git status (debug)
         run: git status --porcelain && git --no-pager diff || true
@@ -46,4 +51,3 @@ jobs:
             git push origin HEAD:${{ github.ref_name }}
           else
             echo "No changes to commit"
-          fi
