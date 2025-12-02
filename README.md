@@ -58,6 +58,7 @@ LeetCode Daily helps build:
 | Day 2 | [Count Number of Trapezoids I (#3886)](https://leetcode.com/problems/count-number-of-trapezoids-i/)               | Math • Geometry • Counting    | 🟡 Medium |
 <!-- END_PROBLEM_TABLE -->
 *(This table will grow automatically as more Daily problems are added.)*
+
 [![Update LeetCode Daily Table](https://github.com/nikhildixit07/DSA-Leetcode-Daily/actions/workflows/update-daily-table.yml/badge.svg)](https://github.com/nikhildixit07/DSA-Leetcode-Daily/actions/workflows/update-daily-table.yml)
 
 
