@@ -13,16 +13,8 @@ Outputs:
      <!-- START_PROBLEM_TABLE -->
      <!-- END_PROBLEM_TABLE -->
 
-Usage:
-  python generate_daily_table.py            # tries online lookup (if requests + bs4 installed)
-  python generate_daily_table.py --offline  # offline heuristics only
-  python generate_daily_table.py --insert README.md  # insert into README.md
-
-Recommended workflow step for GitHub Actions:
-  python generate_daily_table.py --insert README.md
-
-Dependencies for online mode (optional):
-  pip install requests beautifulsoup4
+This version uses LeetCode's GraphQL endpoint to reliably fetch difficulty and topic tags.
+If network or GraphQL fails, it falls back to heuristics.
 """
 
 import re
@@ -32,13 +24,12 @@ import argparse
 from pathlib import Path
 from typing import List
 
-# Optional imports for online metadata fetch
+# Optional imports for network fetch
 try:
     import requests
-    from bs4 import BeautifulSoup
-    HAS_NETWORK = True
+    HAS_REQUESTS = True
 except Exception:
-    HAS_NETWORK = False
+    HAS_REQUESTS = False
 
 ROOT = Path('.').resolve()
 FOLDER_RE = re.compile(r'^\s*(\d+)[-_](.+)$')
@@ -79,7 +70,12 @@ KEYWORD_TOPICS = {
 
 def slug_to_title(slug: str) -> str:
     parts = [p for p in slug.split('-') if p]
-    return ' '.join(part.capitalize() for part in parts)
+    # Attempt to keep capitalized acronyms intact (e.g., 'n' -> 'N')
+    def cap(w):
+        if len(w) == 1:
+            return w.upper()
+        return w.capitalize()
+    return ' '.join(cap(part) for part in parts)
 
 def infer_slug_from_folder(folder_name: str) -> str:
     m = FOLDER_RE.match(folder_name)
@@ -111,67 +107,70 @@ def heuristic_topics(slug: str) -> List[str]:
             topics.append(v)
     return topics or ['Misc']
 
-def fetch_metadata_from_leetcode(slug: str, delay: float = 1.0) -> dict:
-    """Best-effort fetch of difficulty and topic tags from LeetCode page JSON (__NEXT_DATA__)."""
-    if not HAS_NETWORK:
-        raise RuntimeError("requests/bs4 not installed")
-    url = f"https://leetcode.com/problems/{slug}/"
-    headers = {'User-Agent': USER_AGENT}
-    resp = requests.get(url, headers=headers, timeout=10)
-    if resp.status_code != 200:
-        raise RuntimeError(f"HTTP {resp.status_code} fetching {url}")
-    soup = BeautifulSoup(resp.text, 'html.parser')
-    script = soup.find('script', id="__NEXT_DATA__")
-    if not script:
-        raise RuntimeError("Couldn't find __NEXT_DATA__ in page")
-    data = json.loads(script.string)
-    difficulty = None
-    topics = []
-    try:
-        queries = data.get('props', {}).get('pageProps', {}).get('dehydratedState', {}).get('queries', [])
-        for q in queries:
-            st = q.get('state', {}).get('data')
-            if not st:
-                continue
-            question = None
-            if isinstance(st, dict) and 'question' in st:
-                question = st['question']
-            elif isinstance(st, dict) and 'difficulty' in st:
-                question = st
-            if question:
-                difficulty = question.get('difficulty') or question.get('difficultyLevel') or question.get('level')
-                tgs = question.get('topicTags') or question.get('topics') or []
-                for tg in tgs:
-                    if isinstance(tg, dict):
-                        name = tg.get('name') or tg.get('slug')
-                        if name:
-                            topics.append(name.capitalize())
-                    elif isinstance(tg, str):
-                        topics.append(tg.capitalize())
-                break
-    except Exception:
-        pass
-    # fallback top-level
-    try:
-        qtop = data.get('props', {}).get('pageProps', {}).get('question')
-        if qtop and isinstance(qtop, dict):
-            if not difficulty:
-                difficulty = qtop.get('difficulty')
-            if not topics:
-                tgs = qtop.get('topicTags') or qtop.get('topics') or []
-                for tg in tgs:
-                    if isinstance(tg, dict):
-                        topics.append(tg.get('name', '').capitalize())
-                    else:
-                        topics.append(str(tg).capitalize())
-    except Exception:
-        pass
-    difficulty = str(difficulty).capitalize() if difficulty else 'Unknown'
-    topics = sorted(set([t for t in topics if t])) or []
-    time.sleep(delay)
-    return {'difficulty': difficulty, 'topics': topics}
+def fetch_metadata_graphql(slug: str, delay: float = 0.6) -> dict:
+    """
+    Fetch question metadata from LeetCode GraphQL endpoint.
+    Returns: {'difficulty': 'Easy'|'Medium'|'Hard'|..., 'topics': [list of topic names]}
+    Raises RuntimeError on fatal network issues.
+    """
+    if not HAS_REQUESTS:
+        raise RuntimeError("requests is not available")
 
-def build_rows(folders: List[dict], online=True, delay=1.0) -> List[dict]:
+    url = "https://leetcode.com/graphql"
+    # Query: get basic question fields (titleSlug -> question)
+    query = """
+    query getQuestionDetail($titleSlug: String!) {
+      question(titleSlug: $titleSlug) {
+        questionId
+        title
+        titleSlug
+        difficulty
+        topicTags {
+          name
+          slug
+        }
+      }
+    }
+    """
+    payload = {
+        "operationName": "getQuestionDetail",
+        "query": query,
+        "variables": {"titleSlug": slug}
+    }
+    headers = {
+        "User-Agent": USER_AGENT,
+        "Content-Type": "application/json",
+        "Referer": f"https://leetcode.com/problems/{slug}/"
+    }
+    try:
+        resp = requests.post(url, json=payload, headers=headers, timeout=10)
+    except Exception as e:
+        raise RuntimeError(f"Network error: {e}")
+
+    if resp.status_code != 200:
+        raise RuntimeError(f"HTTP {resp.status_code}")
+
+    try:
+        data = resp.json()
+    except Exception as e:
+        raise RuntimeError(f"Invalid JSON response: {e}")
+
+    # Navigate the response
+    q = data.get('data', {}).get('question')
+    if not q:
+        raise RuntimeError("GraphQL returned no question data")
+
+    difficulty = q.get('difficulty') or 'Unknown'
+    tgs = q.get('topicTags') or []
+    topics = []
+    for tg in tgs:
+        name = tg.get('name') if isinstance(tg, dict) else str(tg)
+        if name:
+            topics.append(name)
+    time.sleep(delay)
+    return {'difficulty': str(difficulty).capitalize(), 'topics': topics}
+
+def build_rows(folders: List[dict], online=True, delay=0.6) -> List[dict]:
     rows = []
     for idx, it in enumerate(folders, start=1):
         slug = it['slug']
@@ -179,14 +178,14 @@ def build_rows(folders: List[dict], online=True, delay=1.0) -> List[dict]:
         row = {'day': idx, 'title': title, 'slug': slug, 'folder': it['folder']}
         row['topics'] = heuristic_topics(slug)
         row['difficulty'] = 'Unknown'
-        if online and HAS_NETWORK:
+        if online and HAS_REQUESTS:
             try:
-                meta = fetch_metadata_from_leetcode(slug, delay=delay)
+                meta = fetch_metadata_graphql(slug, delay=delay)
                 if meta.get('topics'):
                     row['topics'] = meta['topics']
                 row['difficulty'] = meta.get('difficulty') or 'Unknown'
             except Exception as e:
-                print(f"[WARN] fetch failed for {slug}: {e}. Using heuristics.")
+                print(f"[WARN] GraphQL fetch failed for {slug}: {e} — using heuristics.")
         rows.append(row)
     return rows
 
@@ -214,15 +213,16 @@ def insert_into_readme(readme_path: Path, table_md: str):
         readme_path.write_text(new_content, encoding='utf-8')
         print(f"Inserted table into {readme_path} between markers.")
     else:
+        # If markers do not exist, append and add markers (explicit behavior)
         new_content = content + "\n\n" + start_marker + "\n\n" + table_md + "\n\n" + end_marker + "\n"
         readme_path.write_text(new_content, encoding='utf-8')
         print(f"Appended table to {readme_path} (markers were not found).")
 
 def main():
     parser = argparse.ArgumentParser(description="Generate Day | Question | Topic | Level table")
-    parser.add_argument("--offline", action="store_true", help="Don't fetch LeetCode pages; use heuristics.")
+    parser.add_argument("--offline", action="store_true", help="Don't fetch LeetCode GraphQL; use heuristics.")
     parser.add_argument("--insert", nargs='?', const="README.md", help="Insert into README.md between markers (default README.md).")
-    parser.add_argument("--delay", type=float, default=1.0, help="Delay between requests when online")
+    parser.add_argument("--delay", type=float, default=0.6, help="Delay between requests when online (seconds)")
     args = parser.parse_args()
 
     folders = gather_problem_folders(ROOT)
@@ -230,9 +230,9 @@ def main():
         print("No problem folders found in repo root. Make sure folders are named like '2263-maximum-running-time-of-n-computers'.")
         return
 
-    online = (not args.offline) and HAS_NETWORK
-    if (not args.offline) and (not HAS_NETWORK):
-        print("[INFO] requests/bs4 not installed — running in offline/heuristic mode.")
+    online = (not args.offline) and HAS_REQUESTS
+    if (not args.offline) and (not HAS_REQUESTS):
+        print("[INFO] requests not installed — running in offline/heuristic mode.")
         online = False
 
     rows = build_rows(folders, online=online, delay=args.delay)
