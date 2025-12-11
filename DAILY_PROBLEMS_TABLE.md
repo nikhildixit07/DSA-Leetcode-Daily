@@ -5,8 +5,9 @@
 | Day 3 | [Maximum Running Time Of N Computers](https://leetcode.com/problems/maximum-running-time-of-n-computers/) | Array, Binary Search, Greedy, Sorting | Hard |
 | Day 4 | [Count Collisions On A Road](https://leetcode.com/problems/count-collisions-on-a-road/) | String, Stack, Simulation | Medium |
 | Day 5 | [Count Partitions With Even Sum Difference](https://leetcode.com/problems/count-partitions-with-even-sum-difference/) | Array, Math, Prefix Sum | Easy |
-| Day 6 | [Count Partitions With Max Min Difference At Most K](https://leetcode.com/problems/count-partitions-with-max-min-difference-at-most-k/) | Array, Dynamic Programming, Queue, Sliding Window, Prefix Sum, Monotonic Queue | Medium |
-| Day 7 | [Count The Number Of Computer Unlocking Permutations](https://leetcode.com/problems/count-the-number-of-computer-unlocking-permutations/) | Array, Math, Brainteaser, Combinatorics | Medium |
-| Day 8 | [Count Special Triplets](https://leetcode.com/problems/count-special-triplets/) | Array, Hash Table, Counting | Medium |
-| Day 9 | [Count Number Of Trapezoids I](https://leetcode.com/problems/count-number-of-trapezoids-i/) | Array, Hash Table, Math, Geometry | Medium |
-| Day 10 | [Count Number Of Trapezoids Ii](https://leetcode.com/problems/count-number-of-trapezoids-ii/) | Array, Hash Table, Math, Geometry | Hard |
+| Day 6 | [Count Covered Buildings](https://leetcode.com/problems/count-covered-buildings/) | Array, Hash Table, Sorting | Medium |
+| Day 7 | [Count Partitions With Max Min Difference At Most K](https://leetcode.com/problems/count-partitions-with-max-min-difference-at-most-k/) | Array, Dynamic Programming, Queue, Sliding Window, Prefix Sum, Monotonic Queue | Medium |
+| Day 8 | [Count The Number Of Computer Unlocking Permutations](https://leetcode.com/problems/count-the-number-of-computer-unlocking-permutations/) | Array, Math, Brainteaser, Combinatorics | Medium |
+| Day 9 | [Count Special Triplets](https://leetcode.com/problems/count-special-triplets/) | Array, Hash Table, Counting | Medium |
+| Day 10 | [Count Number Of Trapezoids I](https://leetcode.com/problems/count-number-of-trapezoids-i/) | Array, Hash Table, Math, Geometry | Medium |
+| Day 11 | [Count Number Of Trapezoids Ii](https://leetcode.com/problems/count-number-of-trapezoids-ii/) | Array, Hash Table, Math, Geometry | Hard |
