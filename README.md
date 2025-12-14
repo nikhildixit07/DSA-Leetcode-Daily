@@ -56,17 +56,18 @@ LeetCode Daily helps build:
 |---:|---|---|---|
 | Day 1 | [Count Odd Numbers In An Interval Range](https://leetcode.com/problems/count-odd-numbers-in-an-interval-range/) | Math | Easy |
 | Day 2 | [Count Square Sum Triples](https://leetcode.com/problems/count-square-sum-triples/) | Math, Enumeration | Easy |
-| Day 3 | [Maximum Running Time Of N Computers](https://leetcode.com/problems/maximum-running-time-of-n-computers/) | Array, Binary Search, Greedy, Sorting | Hard |
-| Day 4 | [Count Collisions On A Road](https://leetcode.com/problems/count-collisions-on-a-road/) | String, Stack, Simulation | Medium |
-| Day 5 | [Count Partitions With Even Sum Difference](https://leetcode.com/problems/count-partitions-with-even-sum-difference/) | Array, Math, Prefix Sum | Easy |
-| Day 6 | [Count Mentions Per User](https://leetcode.com/problems/count-mentions-per-user/) | Array, Math, Sorting, Simulation | Medium |
-| Day 7 | [Count Covered Buildings](https://leetcode.com/problems/count-covered-buildings/) | Array, Hash Table, Sorting | Medium |
-| Day 8 | [Count Partitions With Max Min Difference At Most K](https://leetcode.com/problems/count-partitions-with-max-min-difference-at-most-k/) | Array, Dynamic Programming, Queue, Sliding Window, Prefix Sum, Monotonic Queue | Medium |
-| Day 9 | [Count The Number Of Computer Unlocking Permutations](https://leetcode.com/problems/count-the-number-of-computer-unlocking-permutations/) | Array, Math, Brainteaser, Combinatorics | Medium |
-| Day 10 | [Count Special Triplets](https://leetcode.com/problems/count-special-triplets/) | Array, Hash Table, Counting | Medium |
-| Day 11 | [Count Number Of Trapezoids I](https://leetcode.com/problems/count-number-of-trapezoids-i/) | Array, Hash Table, Math, Geometry | Medium |
-| Day 12 | [Count Number Of Trapezoids Ii](https://leetcode.com/problems/count-number-of-trapezoids-ii/) | Array, Hash Table, Math, Geometry | Hard |
-| Day 13 | [Coupon Code Validator](https://leetcode.com/problems/coupon-code-validator/) | Array, Hash Table, String, Sorting | Easy |
+| Day 3 | [Number Of Ways To Divide A Long Corridor](https://leetcode.com/problems/number-of-ways-to-divide-a-long-corridor/) | Math, String, Dynamic Programming | Hard |
+| Day 4 | [Maximum Running Time Of N Computers](https://leetcode.com/problems/maximum-running-time-of-n-computers/) | Array, Binary Search, Greedy, Sorting | Hard |
+| Day 5 | [Count Collisions On A Road](https://leetcode.com/problems/count-collisions-on-a-road/) | String, Stack, Simulation | Medium |
+| Day 6 | [Count Partitions With Even Sum Difference](https://leetcode.com/problems/count-partitions-with-even-sum-difference/) | Array, Math, Prefix Sum | Easy |
+| Day 7 | [Count Mentions Per User](https://leetcode.com/problems/count-mentions-per-user/) | Array, Math, Sorting, Simulation | Medium |
+| Day 8 | [Count Covered Buildings](https://leetcode.com/problems/count-covered-buildings/) | Array, Hash Table, Sorting | Medium |
+| Day 9 | [Count Partitions With Max Min Difference At Most K](https://leetcode.com/problems/count-partitions-with-max-min-difference-at-most-k/) | Array, Dynamic Programming, Queue, Sliding Window, Prefix Sum, Monotonic Queue | Medium |
+| Day 10 | [Count The Number Of Computer Unlocking Permutations](https://leetcode.com/problems/count-the-number-of-computer-unlocking-permutations/) | Array, Math, Brainteaser, Combinatorics | Medium |
+| Day 11 | [Count Special Triplets](https://leetcode.com/problems/count-special-triplets/) | Array, Hash Table, Counting | Medium |
+| Day 12 | [Count Number Of Trapezoids I](https://leetcode.com/problems/count-number-of-trapezoids-i/) | Array, Hash Table, Math, Geometry | Medium |
+| Day 13 | [Count Number Of Trapezoids Ii](https://leetcode.com/problems/count-number-of-trapezoids-ii/) | Array, Hash Table, Math, Geometry | Hard |
+| Day 14 | [Coupon Code Validator](https://leetcode.com/problems/coupon-code-validator/) | Array, Hash Table, String, Sorting | Easy |
 
 <!-- END_PROBLEM_TABLE -->
 *(This table will grow automatically as more Daily problems are added.)*
