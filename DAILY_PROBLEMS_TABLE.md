@@ -10,8 +10,9 @@
 | Day 8 | [Count Mentions Per User](https://leetcode.com/problems/count-mentions-per-user/) | Array, Math, Sorting, Simulation | Medium |
 | Day 9 | [Count Covered Buildings](https://leetcode.com/problems/count-covered-buildings/) | Array, Hash Table, Sorting | Medium |
 | Day 10 | [Count Partitions With Max Min Difference At Most K](https://leetcode.com/problems/count-partitions-with-max-min-difference-at-most-k/) | Array, Dynamic Programming, Queue, Sliding Window, Prefix Sum, Monotonic Queue | Medium |
-| Day 11 | [Count The Number Of Computer Unlocking Permutations](https://leetcode.com/problems/count-the-number-of-computer-unlocking-permutations/) | Array, Math, Brainteaser, Combinatorics | Medium |
-| Day 12 | [Count Special Triplets](https://leetcode.com/problems/count-special-triplets/) | Array, Hash Table, Counting | Medium |
-| Day 13 | [Count Number Of Trapezoids I](https://leetcode.com/problems/count-number-of-trapezoids-i/) | Array, Hash Table, Math, Geometry | Medium |
-| Day 14 | [Count Number Of Trapezoids Ii](https://leetcode.com/problems/count-number-of-trapezoids-ii/) | Array, Hash Table, Math, Geometry | Hard |
-| Day 15 | [Coupon Code Validator](https://leetcode.com/problems/coupon-code-validator/) | Array, Hash Table, String, Sorting | Easy |
+| Day 11 | [Maximum Profit From Trading Stocks With Discounts](https://leetcode.com/problems/maximum-profit-from-trading-stocks-with-discounts/) | Array, Dynamic Programming, Tree, Depth-First Search | Hard |
+| Day 12 | [Count The Number Of Computer Unlocking Permutations](https://leetcode.com/problems/count-the-number-of-computer-unlocking-permutations/) | Array, Math, Brainteaser, Combinatorics | Medium |
+| Day 13 | [Count Special Triplets](https://leetcode.com/problems/count-special-triplets/) | Array, Hash Table, Counting | Medium |
+| Day 14 | [Count Number Of Trapezoids I](https://leetcode.com/problems/count-number-of-trapezoids-i/) | Array, Hash Table, Math, Geometry | Medium |
+| Day 15 | [Count Number Of Trapezoids Ii](https://leetcode.com/problems/count-number-of-trapezoids-ii/) | Array, Hash Table, Math, Geometry | Hard |
+| Day 16 | [Coupon Code Validator](https://leetcode.com/problems/coupon-code-validator/) | Array, Hash Table, String, Sorting | Easy |
