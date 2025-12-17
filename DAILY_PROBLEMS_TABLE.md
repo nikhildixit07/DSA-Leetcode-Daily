@@ -14,5 +14,6 @@
 | Day 12 | [Count The Number Of Computer Unlocking Permutations](https://leetcode.com/problems/count-the-number-of-computer-unlocking-permutations/) | Array, Math, Brainteaser, Combinatorics | Medium |
 | Day 13 | [Count Special Triplets](https://leetcode.com/problems/count-special-triplets/) | Array, Hash Table, Counting | Medium |
 | Day 14 | [Count Number Of Trapezoids I](https://leetcode.com/problems/count-number-of-trapezoids-i/) | Array, Hash Table, Math, Geometry | Medium |
-| Day 15 | [Count Number Of Trapezoids Ii](https://leetcode.com/problems/count-number-of-trapezoids-ii/) | Array, Hash Table, Math, Geometry | Hard |
-| Day 16 | [Coupon Code Validator](https://leetcode.com/problems/coupon-code-validator/) | Array, Hash Table, String, Sorting | Easy |
+| Day 15 | [Best Time To Buy And Sell Stock V](https://leetcode.com/problems/best-time-to-buy-and-sell-stock-v/) | Array, Dynamic Programming | Medium |
+| Day 16 | [Count Number Of Trapezoids Ii](https://leetcode.com/problems/count-number-of-trapezoids-ii/) | Array, Hash Table, Math, Geometry | Hard |
+| Day 17 | [Coupon Code Validator](https://leetcode.com/problems/coupon-code-validator/) | Array, Hash Table, String, Sorting | Easy |
