@@ -17,3 +17,4 @@
 | Day 15 | [Best Time To Buy And Sell Stock V](https://leetcode.com/problems/best-time-to-buy-and-sell-stock-v/) | Array, Dynamic Programming | Medium |
 | Day 16 | [Count Number Of Trapezoids Ii](https://leetcode.com/problems/count-number-of-trapezoids-ii/) | Array, Hash Table, Math, Geometry | Hard |
 | Day 17 | [Coupon Code Validator](https://leetcode.com/problems/coupon-code-validator/) | Array, Hash Table, String, Sorting | Easy |
+| Day 18 | [Best Time To Buy And Sell Stock Using Strategy](https://leetcode.com/problems/best-time-to-buy-and-sell-stock-using-strategy/) | Array, Sliding Window, Prefix Sum | Medium |
