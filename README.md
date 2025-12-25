@@ -66,18 +66,19 @@ LeetCode Daily helps build:
 | Day 10 | [Maximum Running Time Of N Computers](https://leetcode.com/problems/maximum-running-time-of-n-computers/) | Array, Binary Search, Greedy, Sorting | Hard |
 | Day 11 | [Count Collisions On A Road](https://leetcode.com/problems/count-collisions-on-a-road/) | String, Stack, Simulation | Medium |
 | Day 12 | [Apple Redistribution Into Boxes](https://leetcode.com/problems/apple-redistribution-into-boxes/) | Array, Greedy, Sorting | Easy |
-| Day 13 | [Count Partitions With Even Sum Difference](https://leetcode.com/problems/count-partitions-with-even-sum-difference/) | Array, Math, Prefix Sum | Easy |
-| Day 14 | [Count Mentions Per User](https://leetcode.com/problems/count-mentions-per-user/) | Array, Math, Sorting, Simulation | Medium |
-| Day 15 | [Count Covered Buildings](https://leetcode.com/problems/count-covered-buildings/) | Array, Hash Table, Sorting | Medium |
-| Day 16 | [Count Partitions With Max Min Difference At Most K](https://leetcode.com/problems/count-partitions-with-max-min-difference-at-most-k/) | Array, Dynamic Programming, Queue, Sliding Window, Prefix Sum, Monotonic Queue | Medium |
-| Day 17 | [Maximum Profit From Trading Stocks With Discounts](https://leetcode.com/problems/maximum-profit-from-trading-stocks-with-discounts/) | Array, Dynamic Programming, Tree, Depth-First Search | Hard |
-| Day 18 | [Count The Number Of Computer Unlocking Permutations](https://leetcode.com/problems/count-the-number-of-computer-unlocking-permutations/) | Array, Math, Brainteaser, Combinatorics | Medium |
-| Day 19 | [Count Special Triplets](https://leetcode.com/problems/count-special-triplets/) | Array, Hash Table, Counting | Medium |
-| Day 20 | [Count Number Of Trapezoids I](https://leetcode.com/problems/count-number-of-trapezoids-i/) | Array, Hash Table, Math, Geometry | Medium |
-| Day 21 | [Best Time To Buy And Sell Stock V](https://leetcode.com/problems/best-time-to-buy-and-sell-stock-v/) | Array, Dynamic Programming | Medium |
-| Day 22 | [Count Number Of Trapezoids Ii](https://leetcode.com/problems/count-number-of-trapezoids-ii/) | Array, Hash Table, Math, Geometry | Hard |
-| Day 23 | [Coupon Code Validator](https://leetcode.com/problems/coupon-code-validator/) | Array, Hash Table, String, Sorting | Easy |
-| Day 24 | [Best Time To Buy And Sell Stock Using Strategy](https://leetcode.com/problems/best-time-to-buy-and-sell-stock-using-strategy/) | Array, Sliding Window, Prefix Sum | Medium |
+| Day 13 | [Maximize Happiness Of Selected Children](https://leetcode.com/problems/maximize-happiness-of-selected-children/) | Array, Greedy, Sorting | Medium |
+| Day 14 | [Count Partitions With Even Sum Difference](https://leetcode.com/problems/count-partitions-with-even-sum-difference/) | Array, Math, Prefix Sum | Easy |
+| Day 15 | [Count Mentions Per User](https://leetcode.com/problems/count-mentions-per-user/) | Array, Math, Sorting, Simulation | Medium |
+| Day 16 | [Count Covered Buildings](https://leetcode.com/problems/count-covered-buildings/) | Array, Hash Table, Sorting | Medium |
+| Day 17 | [Count Partitions With Max Min Difference At Most K](https://leetcode.com/problems/count-partitions-with-max-min-difference-at-most-k/) | Array, Dynamic Programming, Queue, Sliding Window, Prefix Sum, Monotonic Queue | Medium |
+| Day 18 | [Maximum Profit From Trading Stocks With Discounts](https://leetcode.com/problems/maximum-profit-from-trading-stocks-with-discounts/) | Array, Dynamic Programming, Tree, Depth-First Search | Hard |
+| Day 19 | [Count The Number Of Computer Unlocking Permutations](https://leetcode.com/problems/count-the-number-of-computer-unlocking-permutations/) | Array, Math, Brainteaser, Combinatorics | Medium |
+| Day 20 | [Count Special Triplets](https://leetcode.com/problems/count-special-triplets/) | Array, Hash Table, Counting | Medium |
+| Day 21 | [Count Number Of Trapezoids I](https://leetcode.com/problems/count-number-of-trapezoids-i/) | Array, Hash Table, Math, Geometry | Medium |
+| Day 22 | [Best Time To Buy And Sell Stock V](https://leetcode.com/problems/best-time-to-buy-and-sell-stock-v/) | Array, Dynamic Programming | Medium |
+| Day 23 | [Count Number Of Trapezoids Ii](https://leetcode.com/problems/count-number-of-trapezoids-ii/) | Array, Hash Table, Math, Geometry | Hard |
+| Day 24 | [Coupon Code Validator](https://leetcode.com/problems/coupon-code-validator/) | Array, Hash Table, String, Sorting | Easy |
+| Day 25 | [Best Time To Buy And Sell Stock Using Strategy](https://leetcode.com/problems/best-time-to-buy-and-sell-stock-using-strategy/) | Array, Sliding Window, Prefix Sum | Medium |
 
 <!-- END_PROBLEM_TABLE -->
 *(This table will grow automatically as more Daily problems are added.)*
