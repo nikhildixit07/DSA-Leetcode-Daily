@@ -1,7 +1,7 @@
 | Day | Question | Topic(s) | Level |
 |---:|---|---|---|
 | Day 1 | [Pyramid Transition Matrix](https://leetcode.com/problems/pyramid-transition-matrix/) | Hash Table, String, Backtracking, Bit Manipulation | Medium |
-| Day 2 | [Delete Columns To Make Sorted](https://leetcode.com/problems/delete-columns-to-make-sorted/) | Array, String | Easy |
+| Day 2 | [Delete Columns To Make Sorted](https://leetcode.com/problems/delete-columns-to-make-sorted/) | Sorting | Unknown |
 | Day 3 | [Delete Columns To Make Sorted Ii](https://leetcode.com/problems/delete-columns-to-make-sorted-ii/) | Array, String, Greedy | Medium |
 | Day 4 | [Delete Columns To Make Sorted Iii](https://leetcode.com/problems/delete-columns-to-make-sorted-iii/) | Array, String, Dynamic Programming | Hard |
 | Day 5 | [Count Negative Numbers In A Sorted Matrix](https://leetcode.com/problems/count-negative-numbers-in-a-sorted-matrix/) | Array, Binary Search, Matrix | Easy |
