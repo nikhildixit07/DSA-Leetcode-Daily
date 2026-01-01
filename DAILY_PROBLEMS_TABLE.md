@@ -9,7 +9,7 @@
 | Day 7 | [Count Square Sum Triples](https://leetcode.com/problems/count-square-sum-triples/) | Math, Enumeration | Easy |
 | Day 8 | [Two Best Non Overlapping Events](https://leetcode.com/problems/two-best-non-overlapping-events/) | Array, Binary Search, Dynamic Programming, Sorting, Heap (Priority Queue) | Medium |
 | Day 9 | [Find All People With Secret](https://leetcode.com/problems/find-all-people-with-secret/) | Depth-First Search, Breadth-First Search, Union Find, Graph, Sorting | Hard |
-| Day 10 | [Number Of Smooth Descent Periods Of A Stock](https://leetcode.com/problems/number-of-smooth-descent-periods-of-a-stock/) | Array, Math, Dynamic Programming | Medium |
+| Day 10 | [Number Of Smooth Descent Periods Of A Stock](https://leetcode.com/problems/number-of-smooth-descent-periods-of-a-stock/) | Array, Math, Two Pointers, Dynamic Programming, Sliding Window | Medium |
 | Day 11 | [Number Of Ways To Divide A Long Corridor](https://leetcode.com/problems/number-of-ways-to-divide-a-long-corridor/) | Math, String, Dynamic Programming | Hard |
 | Day 12 | [Maximum Running Time Of N Computers](https://leetcode.com/problems/maximum-running-time-of-n-computers/) | Array, Binary Search, Greedy, Sorting | Hard |
 | Day 13 | [Count Collisions On A Road](https://leetcode.com/problems/count-collisions-on-a-road/) | String, Stack, Simulation | Medium |
